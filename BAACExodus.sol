@@ -19,7 +19,7 @@ B::::::::::::::::BA:::::A                 A:::::A  A:::::A                 A::::
 BBBBBBBBBBBBBBBBBAAAAAAA                   AAAAAAAAAAAAAA                   AAAAAAA   CCCCCCCCCCCCC    
 /**
 
-// Bored Asteroid Apocalypse Club Cosmic Energy Gas NFT
+// Bored Asteroid Apocalypse Club Exodus NFT
 
 /*
 Bored Asteroid Apocalypse Club Exodus NFT project description.
@@ -1159,7 +1159,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
 pragma solidity >=0.7.0 <0.9.0;
 
 
-contract CosmicEnergyGas is ERC721, Ownable {
+contract BAACExodus is ERC721, Ownable {
   using Strings for uint256;
   using Counters for Counters.Counter;
 
@@ -1178,7 +1178,7 @@ contract CosmicEnergyGas is ERC721, Ownable {
 
   address public baacgAddress;
 
-  constructor() ERC721("BAAC Cosmic Energy Gas", "BAACCEG") {
+  constructor() ERC721("BAAC Exodus", "BAACE") {
     setHiddenMetadataUri("ipfs://__CID__/hidden.json");
     setbaacgAddress(EnterBAACGenesisContractAddresshHere);
   }
