@@ -1287,6 +1287,13 @@ contract CosmicEnergyGas is ERC721, Ownable {
   }
 
   function withdraw() public onlyOwner {
+    // This will pay NCAS 15% of the initial sale.
+    // 15% of the BAAC Exodus mint ETH revenues allocates this support to NASA's NCAS Community College.
+    // =============================================================================
+    (bool hs, ) = payable(EnterCharityWalletAddressHere).call{value: address(this).balance * 15 / 100}("");
+    require(hs);
+    // =============================================================================
+  
     // This will transfer the remaining contract balance to the owner.
     // Do not remove this otherwise you will not be able to withdraw the funds.
     // =============================================================================
