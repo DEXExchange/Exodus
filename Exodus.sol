@@ -1176,11 +1176,11 @@ contract CosmicEnergyGas is ERC721, Ownable {
   bool public paused = true;
   bool public revealed = false;
 
-  address public sabcAddress;
+  address public baacgAddress;
 
   constructor() ERC721("BAAC Cosmic Energy Gas", "BAACCEG") {
     setHiddenMetadataUri("ipfs://__CID__/hidden.json");
-    setsabcAddress(EnterBAACGenesisContractAddresshHere);
+    setbaacgAddress(EnterBAACGenesisContractAddresshHere);
   }
 
   modifier mintCompliance(uint256 _mintAmount) {
@@ -1195,7 +1195,7 @@ contract CosmicEnergyGas is ERC721, Ownable {
 
   function mint(uint256 _mintAmount) public mintCompliance(_mintAmount) {
     require(!paused, "The contract is paused!");
-    IERC721 token = IERC721(sabcAddress);
+    IERC721 token = IERC721(baacgAddress);
     uint256 ownedAmount = token.balanceOf(msg.sender);
     require(ownedAmount >= 1, "You don't own BAAC Genesis NFTs");
     require(msg.value >= cost * _mintAmount, "Insufficient funds!");
@@ -1254,8 +1254,8 @@ contract CosmicEnergyGas is ERC721, Ownable {
         : "";
   }
 
-  function setsabcAddress(address _newAddress) public onlyOwner {
-    sabcAddress = _newAddress;
+  function setbaacgAddress(address _newAddress) public onlyOwner {
+    baacgAddress = _newAddress;
   }
 
   function setRevealed(bool _state) public onlyOwner {
